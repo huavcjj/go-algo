@@ -2,6 +2,7 @@ package algorithm
 
 import (
 	"cmp"
+	heap "go-algo/heap"
 	"slices"
 )
 
@@ -49,4 +50,19 @@ func TopKByPartition[T cmp.Ordered](list []T, k int) []T {
 	result := make([]T, 0, k)
 	brr := slices.Clone(list)
 	return partition(brr, k, result)
+}
+
+func TopKByHeap[T cmp.Ordered](list []T, k int) []T {
+	if k <= 0 || k > len(list) {
+		return list
+	}
+	h := heap.NewHeap[T](list[:k])
+	h.Build()
+	for _, v := range list[k:] {
+		top, _ := h.Top()
+		if v > top {
+			h.ReplaceTop(v)
+		}
+	}
+	return h.GetAll()
 }
