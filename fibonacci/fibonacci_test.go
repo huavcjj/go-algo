@@ -7,7 +7,7 @@ import (
 
 func TestFib(t *testing.T) {
 	n := 20
-	a, b, c, d := Fib(n), FibTopDown(n), FibButtomUp(n), FibButtomUp01(n)
+	a, b, c, d := Fib(n), FibTopDown(n), FibBottomUp(n), FibBottomUp01(n)
 	if a != b || b != c || c != d {
 		fmt.Println(a, b, c, d)
 		t.Fail()
@@ -31,13 +31,13 @@ func BenchmarkFibTopDown(b *testing.B) {
 func BenchmarkFibButtomUp(b *testing.B) {
 	n := 20
 	for i := 0; i < b.N; i++ {
-		FibButtomUp(n)
+		FibBottomUp(n)
 	}
 }
 
 func BenchmarkFibButtomUp01(b *testing.B) {
 	n := 20
 	for i := 0; i < b.N; i++ {
-		FibButtomUp01(n)
+		FibBottomUp01(n)
 	}
 }

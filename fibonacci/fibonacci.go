@@ -26,7 +26,7 @@ func f(n int, cache map[int]int) int {
 	return cache[n]
 }
 
-func FibButtomUp(n int) int {
+func FibBottomUp(n int) int {
 	if n <= 1 {
 		return n
 	}
@@ -39,7 +39,7 @@ func FibButtomUp(n int) int {
 	return arr[n]
 }
 
-func FibButtomUp01(n int) int {
+func FibBottomUp01(n int) int {
 	if n <= 1 {
 		return n
 	}
