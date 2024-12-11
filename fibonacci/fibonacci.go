@@ -39,7 +39,7 @@ func FibBottomUp(n int) int {
 	return arr[n]
 }
 
-func FibBottomUp01(n int) int {
+func FibBottomUpWithSpace(n int) int {
 	if n <= 1 {
 		return n
 	}

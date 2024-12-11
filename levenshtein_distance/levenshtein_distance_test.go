@@ -16,7 +16,7 @@ func TestEditDistance(t *testing.T) {
 	if EditDistanceBottomUp(s1, s2) != 1 {
 		t.Fail()
 	}
-	if EditDistanceBottomUpSpaceOptimized(s1, s2) != 1 {
+	if EditDistanceBottomUpWithSpace(s1, s2) != 1 {
 		t.Fail()
 	}
 
@@ -31,7 +31,7 @@ func TestEditDistance(t *testing.T) {
 	if EditDistanceBottomUp(s1, s2) != 3 {
 		t.Fail()
 	}
-	if EditDistanceBottomUpSpaceOptimized(s1, s2) != 3 {
+	if EditDistanceBottomUpWithSpace(s1, s2) != 3 {
 		t.Fail()
 	}
 }
@@ -63,11 +63,11 @@ func BenchmarkEditDistanceBottomUp(b *testing.B) {
 	}
 }
 
-func BenchmarkEditDistanceBottomUpSpaceOptimized(b *testing.B) {
+func BenchmarkEditDistanceBottomUpWithSpace(b *testing.B) {
 	s1 := []byte("kitten")
 	s2 := []byte("sitting")
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
-		EditDistanceBottomUpSpaceOptimized(s1, s2)
+		EditDistanceBottomUpWithSpace(s1, s2)
 	}
 }

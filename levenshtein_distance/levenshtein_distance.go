@@ -75,7 +75,7 @@ func EditDistanceBottomUp[T cmp.Ordered](s1, s2 []T) int {
 }
 
 // O(n)
-func EditDistanceBottomUpSpaceOptimized[T cmp.Ordered](s1, s2 []T) int {
+func EditDistanceBottomUpWithSpace[T cmp.Ordered](s1, s2 []T) int {
 	if len(s1) < len(s2) {
 		s1, s2 = s2, s1
 	}
