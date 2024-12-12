@@ -5,13 +5,13 @@ import (
 	"fmt"
 )
 
-func TraversList(lst *list.List) {
+func TraverseList(lst *list.List) {
 	head := lst.Front()
 	for head.Next() != nil {
 		fmt.Printf("%v ", head.Value)
 		head = head.Next()
 	}
-	fmt.Println(head.Value)
+	fmt.Println()
 }
 
 func ReverseList(lst *list.List) {
@@ -20,5 +20,5 @@ func ReverseList(lst *list.List) {
 		fmt.Printf("%v ", tail.Value)
 		tail = tail.Prev()
 	}
-	fmt.Println(tail.Value)
+	fmt.Println()
 }

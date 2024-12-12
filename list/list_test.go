@@ -39,8 +39,7 @@ func TestStdList(t *testing.T) {
 	fmt.Println(list.Len()) // 5
 
 	expected := []int{4, 3, 9, 8, 2}
-
-	actual := []int{}
+	actual := make([]int, 0, list.Len())
 	for e := list.Front(); e != nil; e = e.Next() {
 		actual = append(actual, e.Value.(int))
 	}
@@ -50,5 +49,4 @@ func TestStdList(t *testing.T) {
 			t.Errorf("expected %v at index %d, got %v", expected[i], i, v)
 		}
 	}
-
 }
