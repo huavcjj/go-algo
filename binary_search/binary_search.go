@@ -1,6 +1,8 @@
 package algorithm
 
-import "cmp"
+import (
+	"cmp"
+)
 
 func BinarySearch[T cmp.Ordered](arr []T, target T) int {
 	left, right := 0, len(arr)-1
@@ -12,6 +14,15 @@ func BinarySearch[T cmp.Ordered](arr []T, target T) int {
 			left = mid + 1
 		} else {
 			right = mid - 1
+		}
+	}
+	return -1
+}
+
+func LinearSearch(arr []int, target int) int {
+	for i, v := range arr {
+		if v == target {
+			return i
 		}
 	}
 	return -1
